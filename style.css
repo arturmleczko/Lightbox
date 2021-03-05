@@ -1,0 +1,158 @@
+/* GOOGLE FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* RESET */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+}
+
+/* GALLERY ITEM */
+
+.gallery {
+  position: absolute;
+  display: grid;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 15px;
+  grid-template-areas:
+    "img1 img2 img3 img4"
+    "img5 img6 img3 img7";
+  min-width: 70vw;
+}
+
+.gallery .gallery-img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+/* IMAGES */
+
+.gallery .img1 {
+  grid-area: img1;
+  background-image: url("img/thumbnails/img1.jpg");
+}
+
+.gallery .img2 {
+  grid-area: img2;
+  background-image: url("img/thumbnails/img2.jpg");
+}
+
+.gallery .img3 {
+  grid-area: img3;
+  height: 615px;
+  background-image: url("img/thumbnails/img3.jpg");
+}
+
+.gallery .img4 {
+  grid-area: img4;
+  background-image: url("img/thumbnails/img4.jpg");
+}
+
+.gallery .img5 {
+  grid-area: img5;
+  background-image: url("img/thumbnails/img5.jpg");
+}
+
+.gallery .img6 {
+  grid-area: img6;
+  background-image: url("img/thumbnails/img6.jpg");
+}
+
+.gallery .img7 {
+  grid-area: img7;
+  background-image: url("img/thumbnails/img7.jpg");
+}
+
+/* GALLERY TITLES */
+
+.gallery-img div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: black;
+  opacity: 0;
+  text-align: center;
+  transition: .2s all ease-in-out;
+}
+
+.gallery-img div:hover {
+  opacity: 0.8;
+}
+
+.gallery-img a {
+  color: white;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* MODAL */
+
+.modal {
+  position: fixed;
+  display: flex;
+  top: 0;
+  left: 0;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.modal img {
+  border: 5px solid white;
+  border-radius: 10px;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+/* NEXT AND PREV BUTTONS */
+
+.next-btn,
+.prev-btn {
+  position: fixed;
+  display: block;
+  top: 48vh;
+  padding: 5px 10px;
+  color: white;
+  font-size: 5vh;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.next-btn {
+  text-shadow: 1px 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.prev-btn {
+  text-shadow: -1px 0 3px rgba(255, 255, 255, 0.5);
+}
+
+.next-btn:hover,
+.prev-btn:hover {
+  opacity: 0.7;
+}
